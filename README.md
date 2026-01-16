@@ -29,13 +29,15 @@ winget install -e --id OpenJS.NodeJS.LTS
 
 ```bat
 git clone https://github.com/xiezhenyuan-dashuaibi/Litreview
-cd litreview
+cd Litreview
 ```
 
 ## 3. 后端：创建虚拟环境 + 安装依赖
 
+如果你刚执行完上一步 `cd Litreview`，此时已在仓库根目录，可以直接执行下面命令。
+如果你是在任意位置新开了 cmd，请先 `cd /d C:\path\to\Litreview` 切换到仓库根目录。
+
 ```bat
-cd /d C:\path\to\litreview
 python -m venv .venv
 .venv\Scripts\python.exe -m pip install -U pip setuptools wheel
 .venv\Scripts\python.exe -m pip install -r requirements.txt
@@ -45,15 +47,21 @@ python -m venv .venv
 
 ## 4. 前端：安装依赖 + 构建
 
+前端项目在 `frontend` 目录下。
+
+- 如果你刚完成第 3 步并且当前就在仓库根目录（包含 `frontend` 这个文件夹），可以直接 `cd frontend`。
+- 如果你是在任意位置新开了 cmd，请先 `cd /d C:\path\to\Litreview\frontend` 切换到前端目录。
+
+安装前端依赖（以下命令假设你在仓库根目录；如果你已经在 `frontend` 目录，可跳过 `cd frontend`）：
+
 ```bat
-cd /d C:\path\to\litreview\frontend
+cd frontend
 npm install
 ```
 
-生产构建（生成 `frontend\dist`）：
+继续保持在 `frontend` 目录下进行生产构建（生成 `frontend\dist`，供 `start_litreview.bat prod` 使用）：
 
 ```bat
-cd /d C:\path\to\litreview\frontend
 set NODE_OPTIONS=--max-old-space-size=4096
 npm run build
 ```
