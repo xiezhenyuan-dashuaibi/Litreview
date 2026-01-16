@@ -28,7 +28,7 @@ winget install -e --id OpenJS.NodeJS.LTS
 ## 2. 克隆仓库
 
 ```bat
-git clone <你的仓库地址>
+git clone https://github.com/xiezhenyuan-dashuaibi/Litreview
 cd litreview
 ```
 
