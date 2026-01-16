@@ -2,8 +2,6 @@
 
 AI 文献综述生成工具（FastAPI 后端 + React/Vite 前端）。
 
-本 README 面向“从 GitHub 克隆后在 Windows 上用 cmd 跑起来”的使用者：包含 Git/Python/Node(npm) 安装、依赖构建、前端构建、配置与启动。
-
 重要提示：本项目目前仅在 Windows 10/11 上适配与测试。启动脚本（.bat）以及部分系统能力（如弹出目录选择对话框）依赖 Windows 组件，macOS/Linux 暂不可用。
 
 ## 1. 前置软件（一次性安装）
