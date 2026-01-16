@@ -1,0 +1,2 @@
+recursive-include litreview/static *
+include pyproject.toml

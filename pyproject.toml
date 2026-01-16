@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "litreview"
+version = "0.1.0"
+description = "AI Literature Review generator CLI with local web UI"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "fastapi>=0.111",
+  "uvicorn>=0.30",
+  "python-multipart>=0.0.6",
+  "websockets>=12",
+  "requests>=2.32",
+  "volcengine-python-sdk",
+
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "scikit-learn>=1.4",
+  "umap-learn>=0.5.5",
+  "sentence-transformers>=2.6",
+  "torch",
+  "plotly>=5.20",
+  "jieba>=0.42",
+]
+
+[project.scripts]
+litreview = "litreview.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["litreview*"]
+
