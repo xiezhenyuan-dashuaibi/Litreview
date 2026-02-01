@@ -9,7 +9,7 @@ cd /d "%ROOT%"
 set "HOST=127.0.0.1"
 set "PORT=8001"
 set "MODE=%~1"
-if not defined MODE set "MODE=prod"
+if not defined MODE set "MODE=dev"
 
 if not exist "%ROOT%.venv\Scripts\python.exe" (
   echo [ERROR] Missing %ROOT%.venv\Scripts\python.exe
@@ -21,9 +21,9 @@ if /i "%MODE%"=="dev" goto DEV
 if /i "%MODE%"=="prod" goto PROD
 
 echo Usage:
-echo   start_litreview.bat        ^(default prod: backend serves built frontend at http://%HOST%:%PORT%/^)
-echo   start_litreview.bat prod   ^(same as default^)
-echo   start_litreview.bat dev    ^(two terminals: frontend 3000 + backend %PORT%^)
+echo   start_litreview.bat        ^(default dev: two terminals: frontend 3000 + backend %PORT%^
+echo   start_litreview.bat prod   ^(backend serves built frontend at http://%HOST%:%PORT%/^
+echo   start_litreview.bat dev    ^(same as default^)
 pause
 exit /b 1
 
